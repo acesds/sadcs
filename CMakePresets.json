@@ -1,0 +1,39 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": { "major": 3, "minor": 23, "patch": 0 },
+    "configurePresets": [
+        {
+            "name": "clang",
+            "displayName": "Visual Studio 17 2022 (ClangCL, standalone LLVM)",
+            "description": "Default toolchain: clang-cl/lld-link from the standalone LLVM package at C:/Program Files/LLVM, which also provides libomp (OpenMP runtime).",
+            "generator": "Visual Studio 17 2022",
+            "architecture": { "value": "x64", "strategy": "set" },
+            "toolset": { "value": "ClangCL", "strategy": "set" },
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_VS_GLOBALS": "LLVMInstallDir=C:/Program Files/LLVM;LLVMToolsVersion=22"
+            }
+        },
+        {
+            "name": "msvc",
+            "displayName": "Visual Studio 17 2022 (MSVC, fallback)",
+            "description": "cl.exe/link.exe with /openmp:llvm (libomp140).",
+            "generator": "Visual Studio 17 2022",
+            "architecture": { "value": "x64", "strategy": "set" },
+            "binaryDir": "${sourceDir}/build-msvc"
+        },
+        {
+            "name": "cuda",
+            "displayName": "Ninja (clang-cl + nvcc), CPU and GPU variants",
+            "description": "clang-cl for the C++ sources, nvcc with cl.exe as host compiler for the CUDA sources. Needs the MSVC environment (build.bat sets it up) and CUDA 13 or newer.",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-cuda",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_COMPILER": "C:/Program Files/LLVM/bin/clang-cl.exe",
+                "CMAKE_CUDA_COMPILER": "$env{CUDA_PATH}/bin/nvcc.exe",
+                "CMAKE_CUDA_HOST_COMPILER": "cl.exe"
+            }
+        }
+    ]
+}

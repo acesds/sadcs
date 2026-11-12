@@ -1,0 +1,333 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 532" width="960" height="532" role="img" aria-labelledby="t d">
+<title id="t">Construction time vs. threads: sadcs, libsais and libdivsufsort</title>
+<desc id="d">Silesia: 1 threads sadcs 5.96s libsais 3.51s libdivsufsort 6.72s, 2 threads sadcs 3.13s libsais 2.72s libdivsufsort 5.69s, 3 threads sadcs 2.21s libsais 2.32s libdivsufsort 5.43s, 4 threads sadcs 1.74s libsais 2.04s libdivsufsort 5.21s, 6 threads sadcs 1.27s libsais 1.89s libdivsufsort 5.11s, 8 threads sadcs 1.09s libsais 1.90s libdivsufsort 5.12s, 12 threads sadcs 0.98s libsais 1.95s libdivsufsort 5.27s, 16 threads sadcs 0.92s libsais 2.02s libdivsufsort 5.32s; enwik8: 1 threads sadcs 3.33s libsais 2.53s libdivsufsort 5.02s, 2 threads sadcs 1.78s libsais 1.72s libdivsufsort 4.12s, 3 threads sadcs 1.28s libsais 1.40s libdivsufsort 3.82s, 4 threads sadcs 1.01s libsais 1.26s libdivsufsort 3.67s, 6 threads sadcs 0.78s libsais 1.13s libdivsufsort 3.57s, 8 threads sadcs 0.69s libsais 1.13s libdivsufsort 3.50s, 12 threads sadcs 0.62s libsais 1.11s libdivsufsort 3.50s, 16 threads sadcs 0.59s libsais 1.11s libdivsufsort 3.47s; enwik9: 1 threads sadcs 47.94s libsais 29.19s libdivsufsort 57.48s, 2 threads sadcs 26.27s libsais 21.37s libdivsufsort 48.57s, 3 threads sadcs 19.55s libsais 17.61s libdivsufsort 44.37s, 4 threads sadcs 15.50s libsais 15.97s libdivsufsort 42.98s, 6 threads sadcs 12.12s libsais 14.97s libdivsufsort 41.28s, 8 threads sadcs 11.09s libsais 15.03s libdivsufsort 40.73s, 12 threads sadcs 10.36s libsais 14.79s libdivsufsort 40.35s, 16 threads sadcs 10.50s libsais 14.95s libdivsufsort 40.52s; Pizza&amp;Chili sources: 1 threads sadcs 8.07s libsais 5.18s libdivsufsort 9.00s, 2 threads sadcs 4.51s libsais 3.93s libdivsufsort 7.56s, 3 threads sadcs 3.15s libsais 3.23s libdivsufsort 7.08s, 4 threads sadcs 2.61s libsais 2.94s libdivsufsort 6.83s, 6 threads sadcs 1.88s libsais 2.72s libdivsufsort 6.65s, 8 threads sadcs 1.70s libsais 2.77s libdivsufsort 6.53s, 12 threads sadcs 1.43s libsais 2.74s libdivsufsort 6.50s, 16 threads sadcs 1.34s libsais 2.80s libdivsufsort 6.45s; Pizza&amp;Chili dna: 1 threads sadcs 20.24s libsais 10.36s libdivsufsort 24.43s, 2 threads sadcs 11.69s libsais 7.71s libdivsufsort 21.93s, 3 threads sadcs 8.54s libsais 6.29s libdivsufsort 21.10s, 4 threads sadcs 6.96s libsais 5.71s libdivsufsort 20.70s, 6 threads sadcs 5.68s libsais 5.36s libdivsufsort 20.84s, 8 threads sadcs 5.32s libsais 5.35s libdivsufsort 20.89s, 12 threads sadcs 5.07s libsais 5.24s libdivsufsort 20.88s, 16 threads sadcs 5.05s libsais 5.30s libdivsufsort 20.87s; Pizza&amp;Chili proteins: 1 threads sadcs 82.63s libsais 39.05s libdivsufsort 89.76s, 2 threads sadcs 45.26s libsais 29.10s libdivsufsort 68.67s, 3 threads sadcs 32.05s libsais 23.72s libdivsufsort 61.60s, 4 threads sadcs 25.35s libsais 21.63s libdivsufsort 57.21s, 6 threads sadcs 19.22s libsais 20.46s libdivsufsort 55.11s, 8 threads sadcs 16.97s libsais 20.54s libdivsufsort 52.22s, 12 threads sadcs 15.41s libsais 20.30s libdivsufsort 51.01s, 16 threads sadcs 14.75s libsais 20.49s libdivsufsort 50.71s</desc>
+<style>
+  .surface { fill: #fcfcfb; }
+  .ink { fill: #0b0b0b; }
+  .ink2 { fill: #52514e; }
+  .muted { fill: #898781; }
+  .grid { stroke: #e1e0d9; }
+  .axis { stroke: #c3c2b7; }
+  .s1 { stroke: #2a78d6; } .f1 { fill: #2a78d6; }
+  .s2 { stroke: #eb6834; } .f2 { fill: #eb6834; }
+  .s3 { stroke: #8a8f98; } .f3 { fill: #8a8f98; }
+  .ring { stroke: #fcfcfb; }
+  .cross { stroke: #898781; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .ink { fill: #f0efec; }
+    .ink2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; }
+    .axis { stroke: #383835; }
+    .s1 { stroke: #3987e5; } .f1 { fill: #3987e5; }
+    .s2 { stroke: #d95926; } .f2 { fill: #d95926; }
+    .s3 { stroke: #7d828b; } .f3 { fill: #7d828b; }
+    .ring { stroke: #1a1a19; }
+  }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+</style>
+<rect class="surface" x="0" y="0" width="960" height="532" rx="8"/>
+<text class="ink" x="20" y="30" font-size="16" font-weight="600">Construction time vs. threads (lower is better)</text>
+<line class="s1" x1="20" y1="50" x2="42" y2="50" stroke-width="2" stroke-linecap="round"/>
+<circle class="f1 ring" cx="31" cy="50" r="4" stroke-width="2"/>
+<text class="ink2" x="50" y="54" font-size="13">sadcs (cover 128)</text>
+<line class="s2" x1="210" y1="50" x2="232" y2="50" stroke-width="2" stroke-linecap="round"/>
+<circle class="f2 ring" cx="221" cy="50" r="4" stroke-width="2"/>
+<text class="ink2" x="240" y="54" font-size="13">libsais 2.12.1</text>
+<line class="s3" x1="400" y1="50" x2="422" y2="50" stroke-width="2" stroke-linecap="round"/>
+<circle class="f3 ring" cx="411" cy="50" r="4" stroke-width="2"/>
+<text class="ink2" x="430" y="54" font-size="13">libdivsufsort 2.0.2</text>
+<text class="muted" x="940" y="54" font-size="12" text-anchor="end">Ryzen 7 5800X, 8 cores / 16 threads</text>
+<text class="ink" x="64" y="92" font-size="13" font-weight="600">Silesia (12 files, 212 MB)</text>
+<line class="axis" x1="64" y1="256.0" x2="252" y2="256.0" stroke-width="1"/>
+<text class="muted" x="58" y="260.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="64" y1="217.0" x2="252" y2="217.0" stroke-width="1"/>
+<text class="muted" x="58" y="221.0" font-size="11" text-anchor="end">2s</text>
+<line class="grid" x1="64" y1="178.0" x2="252" y2="178.0" stroke-width="1"/>
+<text class="muted" x="58" y="182.0" font-size="11" text-anchor="end">4s</text>
+<line class="grid" x1="64" y1="139.0" x2="252" y2="139.0" stroke-width="1"/>
+<text class="muted" x="58" y="143.0" font-size="11" text-anchor="end">6s</text>
+<line class="grid" x1="64" y1="100.0" x2="252" y2="100.0" stroke-width="1"/>
+<text class="muted" x="58" y="104.0" font-size="11" text-anchor="end">8s</text>
+<text class="muted" x="64.0" y="272" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="76.5" y="272" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="101.6" y="272" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="151.7" y="272" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="201.9" y="272" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="252.0" y="272" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="158.0" y="286" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="89.1" y1="114" x2="89.1" y2="256" stroke-width="1"/>
+<text class="ink2" x="94.1" y="112" font-size="11">sadcs beats libsais from 3 threads</text>
+<polyline class="s3" points="64.0,125.0 76.5,145.0 89.1,150.1 101.6,154.4 126.7,156.4 151.7,156.2 201.9,153.2 252.0,152.3" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="64.0" cy="125.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="76.5" cy="145.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="89.1" cy="150.1" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="101.6" cy="154.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="126.7" cy="156.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="151.7" cy="156.2" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="201.9" cy="153.2" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="252.0" cy="152.3" r="4" stroke-width="2"/>
+<polyline class="s2" points="64.0,187.6 76.5,203.0 89.1,210.8 101.6,216.2 126.7,219.1 151.7,218.9 201.9,218.0 252.0,216.6" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="64.0" cy="187.6" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="76.5" cy="203.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="89.1" cy="210.8" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="101.6" cy="216.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="126.7" cy="219.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="151.7" cy="218.9" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="201.9" cy="218.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="252.0" cy="216.6" r="4" stroke-width="2"/>
+<polyline class="s1" points="64.0,139.8 76.5,195.0 89.1,212.9 101.6,222.1 126.7,231.2 151.7,234.7 201.9,236.9 252.0,238.1" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="64.0" cy="139.8" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="76.5" cy="195.0" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="89.1" cy="212.9" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="101.6" cy="222.1" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="126.7" cy="231.2" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="151.7" cy="234.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="201.9" cy="236.9" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="252.0" cy="238.1" r="4" stroke-width="2"/>
+<text class="ink2" x="260" y="156.3" font-size="11">5.32s</text>
+<text class="ink2" x="260" y="220.6" font-size="11">2.02s</text>
+<text class="ink2" x="260" y="242.1" font-size="11">0.92s</text>
+<text class="ink" x="379" y="92" font-size="13" font-weight="600">enwik8 (100 MB)</text>
+<line class="axis" x1="379" y1="256.0" x2="567" y2="256.0" stroke-width="1"/>
+<text class="muted" x="373" y="260.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="379" y1="178.0" x2="567" y2="178.0" stroke-width="1"/>
+<text class="muted" x="373" y="182.0" font-size="11" text-anchor="end">3s</text>
+<line class="grid" x1="379" y1="100.0" x2="567" y2="100.0" stroke-width="1"/>
+<text class="muted" x="373" y="104.0" font-size="11" text-anchor="end">6s</text>
+<text class="muted" x="379.0" y="272" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="391.5" y="272" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="416.6" y="272" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="466.7" y="272" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="516.9" y="272" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="567.0" y="272" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="473.0" y="286" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="404.1" y1="114" x2="404.1" y2="256" stroke-width="1"/>
+<text class="ink2" x="409.1" y="112" font-size="11">sadcs beats libsais from 3 threads</text>
+<polyline class="s3" points="379.0,125.5 391.5,148.9 404.1,156.7 416.6,160.6 441.7,163.2 466.7,165.0 516.9,165.0 567.0,165.8" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="379.0" cy="125.5" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="391.5" cy="148.9" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="404.1" cy="156.7" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="416.6" cy="160.6" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="441.7" cy="163.2" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="466.7" cy="165.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="516.9" cy="165.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="567.0" cy="165.8" r="4" stroke-width="2"/>
+<polyline class="s2" points="379.0,190.2 391.5,211.3 404.1,219.6 416.6,223.2 441.7,226.6 466.7,226.6 516.9,227.1 567.0,227.1" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="379.0" cy="190.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="391.5" cy="211.3" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="404.1" cy="219.6" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="416.6" cy="223.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="441.7" cy="226.6" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="466.7" cy="226.6" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="516.9" cy="227.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="567.0" cy="227.1" r="4" stroke-width="2"/>
+<polyline class="s1" points="379.0,169.4 391.5,209.7 404.1,222.7 416.6,229.7 441.7,235.7 466.7,238.1 516.9,239.9 567.0,240.7" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="379.0" cy="169.4" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="391.5" cy="209.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="404.1" cy="222.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="416.6" cy="229.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="441.7" cy="235.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="466.7" cy="238.1" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="516.9" cy="239.9" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="567.0" cy="240.7" r="4" stroke-width="2"/>
+<text class="ink2" x="575" y="169.8" font-size="11">3.47s</text>
+<text class="ink2" x="575" y="231.1" font-size="11">1.11s</text>
+<text class="ink2" x="575" y="244.7" font-size="11">0.59s</text>
+<text class="ink" x="694" y="92" font-size="13" font-weight="600">enwik9 (1 GB)</text>
+<line class="axis" x1="694" y1="256.0" x2="882" y2="256.0" stroke-width="1"/>
+<text class="muted" x="688" y="260.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="694" y1="217.0" x2="882" y2="217.0" stroke-width="1"/>
+<text class="muted" x="688" y="221.0" font-size="11" text-anchor="end">15s</text>
+<line class="grid" x1="694" y1="178.0" x2="882" y2="178.0" stroke-width="1"/>
+<text class="muted" x="688" y="182.0" font-size="11" text-anchor="end">30s</text>
+<line class="grid" x1="694" y1="139.0" x2="882" y2="139.0" stroke-width="1"/>
+<text class="muted" x="688" y="143.0" font-size="11" text-anchor="end">45s</text>
+<line class="grid" x1="694" y1="100.0" x2="882" y2="100.0" stroke-width="1"/>
+<text class="muted" x="688" y="104.0" font-size="11" text-anchor="end">60s</text>
+<text class="muted" x="694.0" y="272" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="706.5" y="272" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="731.6" y="272" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="781.7" y="272" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="831.9" y="272" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="882.0" y="272" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="788.0" y="286" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="731.6" y1="114" x2="731.6" y2="256" stroke-width="1"/>
+<text class="ink2" x="736.6" y="112" font-size="11">sadcs beats libsais from 4 threads</text>
+<polyline class="s3" points="694.0,106.6 706.5,129.7 719.1,140.6 731.6,144.3 756.7,148.7 781.7,150.1 831.9,151.1 882.0,150.6" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="694.0" cy="106.6" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="706.5" cy="129.7" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="719.1" cy="140.6" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="731.6" cy="144.3" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="756.7" cy="148.7" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="781.7" cy="150.1" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="831.9" cy="151.1" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="882.0" cy="150.6" r="4" stroke-width="2"/>
+<polyline class="s2" points="694.0,180.1 706.5,200.4 719.1,210.2 731.6,214.5 756.7,217.1 781.7,216.9 831.9,217.5 882.0,217.1" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="694.0" cy="180.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="706.5" cy="200.4" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="719.1" cy="210.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="731.6" cy="214.5" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="756.7" cy="217.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="781.7" cy="216.9" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="831.9" cy="217.5" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="882.0" cy="217.1" r="4" stroke-width="2"/>
+<polyline class="s1" points="694.0,131.4 706.5,187.7 719.1,205.2 731.6,215.7 756.7,224.5 781.7,227.2 831.9,229.1 882.0,228.7" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="694.0" cy="131.4" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="706.5" cy="187.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="719.1" cy="205.2" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="731.6" cy="215.7" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="756.7" cy="224.5" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="781.7" cy="227.2" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="831.9" cy="229.1" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="882.0" cy="228.7" r="4" stroke-width="2"/>
+<text class="ink2" x="890" y="154.6" font-size="11">40.52s</text>
+<text class="ink2" x="890" y="221.1" font-size="11">14.95s</text>
+<text class="ink2" x="890" y="233.1" font-size="11">10.50s</text>
+<text class="ink" x="64" y="312" font-size="13" font-weight="600">Pizza&amp;Chili sources (211 MB)</text>
+<line class="axis" x1="64" y1="476.0" x2="252" y2="476.0" stroke-width="1"/>
+<text class="muted" x="58" y="480.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="64" y1="424.0" x2="252" y2="424.0" stroke-width="1"/>
+<text class="muted" x="58" y="428.0" font-size="11" text-anchor="end">3s</text>
+<line class="grid" x1="64" y1="372.0" x2="252" y2="372.0" stroke-width="1"/>
+<text class="muted" x="58" y="376.0" font-size="11" text-anchor="end">6s</text>
+<line class="grid" x1="64" y1="320.0" x2="252" y2="320.0" stroke-width="1"/>
+<text class="muted" x="58" y="324.0" font-size="11" text-anchor="end">9s</text>
+<text class="muted" x="64.0" y="492" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="76.5" y="492" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="101.6" y="492" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="151.7" y="492" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="201.9" y="492" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="252.0" y="492" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="158.0" y="506" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="89.1" y1="334" x2="89.1" y2="476" stroke-width="1"/>
+<text class="ink2" x="94.1" y="332" font-size="11">sadcs beats libsais from 3 threads</text>
+<polyline class="s3" points="64.0,320.0 76.5,345.0 89.1,353.3 101.6,357.6 126.7,360.7 151.7,362.8 201.9,363.3 252.0,364.2" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="64.0" cy="320.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="76.5" cy="345.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="89.1" cy="353.3" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="101.6" cy="357.6" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="126.7" cy="360.7" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="151.7" cy="362.8" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="201.9" cy="363.3" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="252.0" cy="364.2" r="4" stroke-width="2"/>
+<polyline class="s2" points="64.0,386.2 76.5,407.9 89.1,420.0 101.6,425.0 126.7,428.9 151.7,428.0 201.9,428.5 252.0,427.5" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="64.0" cy="386.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="76.5" cy="407.9" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="89.1" cy="420.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="101.6" cy="425.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="126.7" cy="428.9" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="151.7" cy="428.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="201.9" cy="428.5" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="252.0" cy="427.5" r="4" stroke-width="2"/>
+<polyline class="s1" points="64.0,336.1 76.5,397.8 89.1,421.4 101.6,430.8 126.7,443.4 151.7,446.5 201.9,451.2 252.0,452.8" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="64.0" cy="336.1" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="76.5" cy="397.8" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="89.1" cy="421.4" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="101.6" cy="430.8" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="126.7" cy="443.4" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="151.7" cy="446.5" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="201.9" cy="451.2" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="252.0" cy="452.8" r="4" stroke-width="2"/>
+<text class="ink2" x="260" y="368.2" font-size="11">6.45s</text>
+<text class="ink2" x="260" y="431.5" font-size="11">2.80s</text>
+<text class="ink2" x="260" y="456.8" font-size="11">1.34s</text>
+<text class="ink" x="379" y="312" font-size="13" font-weight="600">Pizza&amp;Chili dna (404 MB)</text>
+<line class="axis" x1="379" y1="476.0" x2="567" y2="476.0" stroke-width="1"/>
+<text class="muted" x="373" y="480.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="379" y1="424.0" x2="567" y2="424.0" stroke-width="1"/>
+<text class="muted" x="373" y="428.0" font-size="11" text-anchor="end">10s</text>
+<line class="grid" x1="379" y1="372.0" x2="567" y2="372.0" stroke-width="1"/>
+<text class="muted" x="373" y="376.0" font-size="11" text-anchor="end">20s</text>
+<line class="grid" x1="379" y1="320.0" x2="567" y2="320.0" stroke-width="1"/>
+<text class="muted" x="373" y="324.0" font-size="11" text-anchor="end">30s</text>
+<text class="muted" x="379.0" y="492" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="391.5" y="492" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="416.6" y="492" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="466.7" y="492" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="516.9" y="492" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="567.0" y="492" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="473.0" y="506" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="466.7" y1="334" x2="466.7" y2="476" stroke-width="1"/>
+<text class="ink2" x="471.7" y="332" font-size="11">sadcs beats libsais from 8 threads</text>
+<polyline class="s3" points="379.0,349.0 391.5,362.0 404.1,366.3 416.6,368.4 441.7,367.6 466.7,367.4 516.9,367.4 567.0,367.5" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="379.0" cy="349.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="391.5" cy="362.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="404.1" cy="366.3" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="416.6" cy="368.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="441.7" cy="367.6" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="466.7" cy="367.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="516.9" cy="367.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="567.0" cy="367.5" r="4" stroke-width="2"/>
+<polyline class="s2" points="379.0,422.1 391.5,435.9 404.1,443.3 416.6,446.3 441.7,448.1 466.7,448.2 516.9,448.8 567.0,448.4" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="379.0" cy="422.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="391.5" cy="435.9" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="404.1" cy="443.3" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="416.6" cy="446.3" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="441.7" cy="448.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="466.7" cy="448.2" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="516.9" cy="448.8" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="567.0" cy="448.4" r="4" stroke-width="2"/>
+<polyline class="s1" points="379.0,370.8 391.5,415.2 404.1,431.6 416.6,439.8 441.7,446.5 466.7,448.3 516.9,449.6 567.0,449.7" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="379.0" cy="370.8" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="391.5" cy="415.2" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="404.1" cy="431.6" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="416.6" cy="439.8" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="441.7" cy="446.5" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="466.7" cy="448.3" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="516.9" cy="449.6" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="567.0" cy="449.7" r="4" stroke-width="2"/>
+<text class="ink2" x="575" y="371.5" font-size="11">20.87s</text>
+<text class="ink2" x="575" y="452.4" font-size="11">5.30s</text>
+<text class="ink2" x="575" y="464.4" font-size="11">5.05s</text>
+<text class="ink" x="694" y="312" font-size="13" font-weight="600">Pizza&amp;Chili proteins (1.18 GB)</text>
+<line class="axis" x1="694" y1="476.0" x2="882" y2="476.0" stroke-width="1"/>
+<text class="muted" x="688" y="480.0" font-size="11" text-anchor="end">0s</text>
+<line class="grid" x1="694" y1="437.0" x2="882" y2="437.0" stroke-width="1"/>
+<text class="muted" x="688" y="441.0" font-size="11" text-anchor="end">25s</text>
+<line class="grid" x1="694" y1="398.0" x2="882" y2="398.0" stroke-width="1"/>
+<text class="muted" x="688" y="402.0" font-size="11" text-anchor="end">50s</text>
+<line class="grid" x1="694" y1="359.0" x2="882" y2="359.0" stroke-width="1"/>
+<text class="muted" x="688" y="363.0" font-size="11" text-anchor="end">75s</text>
+<line class="grid" x1="694" y1="320.0" x2="882" y2="320.0" stroke-width="1"/>
+<text class="muted" x="688" y="324.0" font-size="11" text-anchor="end">100s</text>
+<text class="muted" x="694.0" y="492" font-size="11" text-anchor="middle">1</text>
+<text class="muted" x="706.5" y="492" font-size="11" text-anchor="middle">2</text>
+<text class="muted" x="731.6" y="492" font-size="11" text-anchor="middle">4</text>
+<text class="muted" x="781.7" y="492" font-size="11" text-anchor="middle">8</text>
+<text class="muted" x="831.9" y="492" font-size="11" text-anchor="middle">12</text>
+<text class="muted" x="882.0" y="492" font-size="11" text-anchor="middle">16</text>
+<text class="muted" x="788.0" y="506" font-size="11" text-anchor="middle">threads</text>
+<line class="cross" x1="756.7" y1="334" x2="756.7" y2="476" stroke-width="1"/>
+<text class="ink2" x="761.7" y="332" font-size="11">sadcs beats libsais from 6 threads</text>
+<polyline class="s3" points="694.0,336.0 706.5,368.9 719.1,379.9 731.6,386.8 756.7,390.0 781.7,394.5 831.9,396.4 882.0,396.9" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f3 ring" cx="694.0" cy="336.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="706.5" cy="368.9" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="719.1" cy="379.9" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="731.6" cy="386.8" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="756.7" cy="390.0" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="781.7" cy="394.5" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="831.9" cy="396.4" r="4" stroke-width="2"/>
+<circle class="f3 ring" cx="882.0" cy="396.9" r="4" stroke-width="2"/>
+<polyline class="s2" points="694.0,415.1 706.5,430.6 719.1,439.0 731.6,442.3 756.7,444.1 781.7,444.0 831.9,444.3 882.0,444.0" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f2 ring" cx="694.0" cy="415.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="706.5" cy="430.6" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="719.1" cy="439.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="731.6" cy="442.3" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="756.7" cy="444.1" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="781.7" cy="444.0" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="831.9" cy="444.3" r="4" stroke-width="2"/>
+<circle class="f2 ring" cx="882.0" cy="444.0" r="4" stroke-width="2"/>
+<polyline class="s1" points="694.0,347.1 706.5,405.4 719.1,426.0 731.6,436.5 756.7,446.0 781.7,449.5 831.9,452.0 882.0,453.0" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="f1 ring" cx="694.0" cy="347.1" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="706.5" cy="405.4" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="719.1" cy="426.0" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="731.6" cy="436.5" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="756.7" cy="446.0" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="781.7" cy="449.5" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="831.9" cy="452.0" r="4" stroke-width="2"/>
+<circle class="f1 ring" cx="882.0" cy="453.0" r="4" stroke-width="2"/>
+<text class="ink2" x="890" y="400.9" font-size="11">50.71s</text>
+<text class="ink2" x="890" y="448.0" font-size="11">20.49s</text>
+<text class="ink2" x="890" y="460.0" font-size="11">14.75s</text>
+</svg>

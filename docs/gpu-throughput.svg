@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 444" width="960" height="444" role="img" aria-labelledby="t d">
+<title id="t">GPU construction throughput: sadcs and libcubwt</title>
+<desc id="d">Suffix array, Silesia: sadcs 995 MB/s, libcubwt 1.0.0 495 MB/s; Suffix array, Gauntlet: sadcs 453 MB/s, libcubwt 1.0.0 157 MB/s; Suffix array, enwik8: sadcs 1053 MB/s, libcubwt 1.0.0 820 MB/s; Suffix array, enwik9, first 500 MB: sadcs 935 MB/s, libcubwt 1.0.0 736 MB/s; Suffix array, enwik9: sadcs 876 MB/s, libcubwt 1.0.0 doesn't fit; Suffix array, Pizza&amp;Chili sources: sadcs 909 MB/s, libcubwt 1.0.0 615 MB/s; Suffix array, Pizza&amp;Chili dna: sadcs 974 MB/s, libcubwt 1.0.0 722 MB/s; Suffix array, Pizza&amp;Chili proteins: sadcs 766 MB/s, libcubwt 1.0.0 doesn't fit; BWT, Silesia: sadcs 1087 MB/s, libcubwt 1.6.3 686 MB/s; BWT, Gauntlet: sadcs 465 MB/s, libcubwt 1.6.3 232 MB/s; BWT, enwik8: sadcs 1163 MB/s, libcubwt 1.6.3 1075 MB/s; BWT, enwik9, first 500 MB: sadcs 1012 MB/s, libcubwt 1.6.3 947 MB/s; BWT, enwik9: sadcs 943 MB/s, libcubwt 1.6.3 doesn't fit; BWT, Pizza&amp;Chili sources: sadcs 982 MB/s, libcubwt 1.6.3 842 MB/s; BWT, Pizza&amp;Chili dna: sadcs 1059 MB/s, libcubwt 1.6.3 923 MB/s; BWT, Pizza&amp;Chili proteins: sadcs 816 MB/s, libcubwt 1.6.3 doesn't fit</desc>
+<style>
+  .surface { fill: #fcfcfb; }
+  .ink { fill: #0b0b0b; }
+  .ink2 { fill: #52514e; }
+  .muted { fill: #898781; }
+  .grid { stroke: #e1e0d9; }
+  .axis { stroke: #c3c2b7; }
+  .f1 { fill: #2a78d6; }
+  .f2 { fill: #eb6834; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .ink { fill: #f0efec; }
+    .ink2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; }
+    .axis { stroke: #383835; }
+    .f1 { fill: #3987e5; }
+    .f2 { fill: #d95926; }
+  }
+  text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+</style>
+<rect class="surface" x="0" y="0" width="960" height="444" rx="8"/>
+<text class="ink" x="20" y="30" font-size="16" font-weight="600">GPU construction throughput in MB/s (higher is better)</text>
+<rect class="f1" x="20" y="44" width="14" height="11" rx="2"/>
+<text class="ink2" x="40" y="54" font-size="13">sadcs</text>
+<rect class="f2" x="110" y="44" width="14" height="11" rx="2"/>
+<text class="ink2" x="130" y="54" font-size="13">libcubwt (1.0.0 for the suffix array, 1.6.3 for the BWT)</text>
+<text class="muted" x="940" y="54" font-size="12" text-anchor="end">GeForce RTX 5070 Ti, CUDA 13.5, transfers included</text>
+<text class="ink" x="170" y="88" font-size="13" font-weight="600">Suffix array</text>
+<line class="axis" x1="170.0" y1="104" x2="170.0" y2="408" stroke-width="1"/>
+<text class="muted" x="170.0" y="424" font-size="11" text-anchor="middle">0</text>
+<line class="grid" x1="262.5" y1="104" x2="262.5" y2="408" stroke-width="1"/>
+<text class="muted" x="262.5" y="424" font-size="11" text-anchor="middle">300</text>
+<line class="grid" x1="355.0" y1="104" x2="355.0" y2="408" stroke-width="1"/>
+<text class="muted" x="355.0" y="424" font-size="11" text-anchor="middle">600</text>
+<line class="grid" x1="447.5" y1="104" x2="447.5" y2="408" stroke-width="1"/>
+<text class="muted" x="447.5" y="424" font-size="11" text-anchor="middle">900</text>
+<line class="grid" x1="540.0" y1="104" x2="540.0" y2="408" stroke-width="1"/>
+<text class="muted" x="540.0" y="424" font-size="11" text-anchor="middle">1200</text>
+<path class="f1" d="M170.0,110.0 H472.8 Q476.8,110.0 476.8,114.0 V117.0 Q476.8,121.0 472.8,121.0 H170.0 Z"/>
+<text class="ink2" x="481.8" y="119.5" font-size="11">995</text>
+<path class="f2" d="M170.0,123.0 H318.6 Q322.6,123.0 322.6,127.0 V130.0 Q322.6,134.0 318.6,134.0 H170.0 Z"/>
+<text class="ink2" x="327.6" y="132.5" font-size="11">495</text>
+<path class="f1" d="M170.0,148.0 H305.7 Q309.7,148.0 309.7,152.0 V155.0 Q309.7,159.0 305.7,159.0 H170.0 Z"/>
+<text class="ink2" x="314.7" y="157.5" font-size="11">453</text>
+<path class="f2" d="M170.0,161.0 H214.4 Q218.4,161.0 218.4,165.0 V168.0 Q218.4,172.0 214.4,172.0 H170.0 Z"/>
+<text class="ink2" x="223.4" y="170.5" font-size="11">157</text>
+<path class="f1" d="M170.0,186.0 H490.7 Q494.7,186.0 494.7,190.0 V193.0 Q494.7,197.0 490.7,197.0 H170.0 Z"/>
+<text class="ink2" x="499.7" y="195.5" font-size="11">1053</text>
+<path class="f2" d="M170.0,199.0 H418.8 Q422.8,199.0 422.8,203.0 V206.0 Q422.8,210.0 418.8,210.0 H170.0 Z"/>
+<text class="ink2" x="427.8" y="208.5" font-size="11">820</text>
+<path class="f1" d="M170.0,224.0 H454.3 Q458.3,224.0 458.3,228.0 V231.0 Q458.3,235.0 454.3,235.0 H170.0 Z"/>
+<text class="ink2" x="463.3" y="233.5" font-size="11">935</text>
+<path class="f2" d="M170.0,237.0 H392.9 Q396.9,237.0 396.9,241.0 V244.0 Q396.9,248.0 392.9,248.0 H170.0 Z"/>
+<text class="ink2" x="401.9" y="246.5" font-size="11">736</text>
+<path class="f1" d="M170.0,262.0 H436.1 Q440.1,262.0 440.1,266.0 V269.0 Q440.1,273.0 436.1,273.0 H170.0 Z"/>
+<text class="ink2" x="445.1" y="271.5" font-size="11">876</text>
+<text class="muted" x="174" y="284.5" font-size="11" font-style="italic">doesn't fit</text>
+<path class="f1" d="M170.0,300.0 H446.3 Q450.3,300.0 450.3,304.0 V307.0 Q450.3,311.0 446.3,311.0 H170.0 Z"/>
+<text class="ink2" x="455.3" y="309.5" font-size="11">909</text>
+<path class="f2" d="M170.0,313.0 H355.6 Q359.6,313.0 359.6,317.0 V320.0 Q359.6,324.0 355.6,324.0 H170.0 Z"/>
+<text class="ink2" x="364.6" y="322.5" font-size="11">615</text>
+<path class="f1" d="M170.0,338.0 H466.3 Q470.3,338.0 470.3,342.0 V345.0 Q470.3,349.0 466.3,349.0 H170.0 Z"/>
+<text class="ink2" x="475.3" y="347.5" font-size="11">974</text>
+<path class="f2" d="M170.0,351.0 H388.6 Q392.6,351.0 392.6,355.0 V358.0 Q392.6,362.0 388.6,362.0 H170.0 Z"/>
+<text class="ink2" x="397.6" y="360.5" font-size="11">722</text>
+<path class="f1" d="M170.0,376.0 H402.2 Q406.2,376.0 406.2,380.0 V383.0 Q406.2,387.0 402.2,387.0 H170.0 Z"/>
+<text class="ink2" x="411.2" y="385.5" font-size="11">766</text>
+<text class="muted" x="174" y="398.5" font-size="11" font-style="italic">doesn't fit</text>
+<text class="ink" x="590" y="88" font-size="13" font-weight="600">BWT</text>
+<line class="axis" x1="590.0" y1="104" x2="590.0" y2="408" stroke-width="1"/>
+<text class="muted" x="590.0" y="424" font-size="11" text-anchor="middle">0</text>
+<line class="grid" x1="677.5" y1="104" x2="677.5" y2="408" stroke-width="1"/>
+<text class="muted" x="677.5" y="424" font-size="11" text-anchor="middle">300</text>
+<line class="grid" x1="765.0" y1="104" x2="765.0" y2="408" stroke-width="1"/>
+<text class="muted" x="765.0" y="424" font-size="11" text-anchor="middle">600</text>
+<line class="grid" x1="852.5" y1="104" x2="852.5" y2="408" stroke-width="1"/>
+<text class="muted" x="852.5" y="424" font-size="11" text-anchor="middle">900</text>
+<line class="grid" x1="940.0" y1="104" x2="940.0" y2="408" stroke-width="1"/>
+<text class="muted" x="940.0" y="424" font-size="11" text-anchor="middle">1200</text>
+<path class="f1" d="M590.0,110.0 H903.0 Q907.0,110.0 907.0,114.0 V117.0 Q907.0,121.0 903.0,121.0 H590.0 Z"/>
+<text class="ink2" x="912.0" y="119.5" font-size="11">1087</text>
+<path class="f2" d="M590.0,123.0 H786.1 Q790.1,123.0 790.1,127.0 V130.0 Q790.1,134.0 786.1,134.0 H590.0 Z"/>
+<text class="ink2" x="795.1" y="132.5" font-size="11">686</text>
+<path class="f1" d="M590.0,148.0 H721.6 Q725.6,148.0 725.6,152.0 V155.0 Q725.6,159.0 721.6,159.0 H590.0 Z"/>
+<text class="ink2" x="730.6" y="157.5" font-size="11">465</text>
+<path class="f2" d="M590.0,161.0 H653.7 Q657.7,161.0 657.7,165.0 V168.0 Q657.7,172.0 653.7,172.0 H590.0 Z"/>
+<text class="ink2" x="662.7" y="170.5" font-size="11">232</text>
+<path class="f1" d="M590.0,186.0 H925.2 Q929.2,186.0 929.2,190.0 V193.0 Q929.2,197.0 925.2,197.0 H590.0 Z"/>
+<text class="ink2" x="934.2" y="195.5" font-size="11">1163</text>
+<path class="f2" d="M590.0,199.0 H899.5 Q903.5,199.0 903.5,203.0 V206.0 Q903.5,210.0 899.5,210.0 H590.0 Z"/>
+<text class="ink2" x="908.5" y="208.5" font-size="11">1075</text>
+<path class="f1" d="M590.0,224.0 H881.2 Q885.2,224.0 885.2,228.0 V231.0 Q885.2,235.0 881.2,235.0 H590.0 Z"/>
+<text class="ink2" x="890.2" y="233.5" font-size="11">1012</text>
+<path class="f2" d="M590.0,237.0 H862.2 Q866.2,237.0 866.2,241.0 V244.0 Q866.2,248.0 862.2,248.0 H590.0 Z"/>
+<text class="ink2" x="871.2" y="246.5" font-size="11">947</text>
+<path class="f1" d="M590.0,262.0 H861.0 Q865.0,262.0 865.0,266.0 V269.0 Q865.0,273.0 861.0,273.0 H590.0 Z"/>
+<text class="ink2" x="870.0" y="271.5" font-size="11">943</text>
+<text class="muted" x="594" y="284.5" font-size="11" font-style="italic">doesn't fit</text>
+<path class="f1" d="M590.0,300.0 H872.4 Q876.4,300.0 876.4,304.0 V307.0 Q876.4,311.0 872.4,311.0 H590.0 Z"/>
+<text class="ink2" x="881.4" y="309.5" font-size="11">982</text>
+<path class="f2" d="M590.0,313.0 H831.6 Q835.6,313.0 835.6,317.0 V320.0 Q835.6,324.0 831.6,324.0 H590.0 Z"/>
+<text class="ink2" x="840.6" y="322.5" font-size="11">842</text>
+<path class="f1" d="M590.0,338.0 H894.9 Q898.9,338.0 898.9,342.0 V345.0 Q898.9,349.0 894.9,349.0 H590.0 Z"/>
+<text class="ink2" x="903.9" y="347.5" font-size="11">1059</text>
+<path class="f2" d="M590.0,351.0 H855.2 Q859.2,351.0 859.2,355.0 V358.0 Q859.2,362.0 855.2,362.0 H590.0 Z"/>
+<text class="ink2" x="864.2" y="360.5" font-size="11">923</text>
+<path class="f1" d="M590.0,376.0 H824.0 Q828.0,376.0 828.0,380.0 V383.0 Q828.0,387.0 824.0,387.0 H590.0 Z"/>
+<text class="ink2" x="833.0" y="385.5" font-size="11">816</text>
+<text class="muted" x="594" y="398.5" font-size="11" font-style="italic">doesn't fit</text>
+<text class="ink2" x="150" y="126.5" font-size="13" text-anchor="end">Silesia</text>
+<text class="ink2" x="150" y="164.5" font-size="13" text-anchor="end">Gauntlet</text>
+<text class="ink2" x="150" y="202.5" font-size="13" text-anchor="end">enwik8</text>
+<text class="ink2" x="150" y="240.5" font-size="13" text-anchor="end">enwik9, first 500 MB</text>
+<text class="ink2" x="150" y="278.5" font-size="13" text-anchor="end">enwik9</text>
+<text class="ink2" x="150" y="316.5" font-size="13" text-anchor="end">Pizza&amp;Chili sources</text>
+<text class="ink2" x="150" y="354.5" font-size="13" text-anchor="end">Pizza&amp;Chili dna</text>
+<text class="ink2" x="150" y="392.5" font-size="13" text-anchor="end">Pizza&amp;Chili proteins</text>
+</svg>
